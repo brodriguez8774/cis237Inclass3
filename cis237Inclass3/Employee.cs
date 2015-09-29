@@ -8,12 +8,40 @@ namespace cis237Inclass3
 {
     class Employee
     {
-        //Private variables
+        #region Variables
+
         private string firstName;
         private string lastName;
         private string department;
 
-        //Propertiest for variables
+        #endregion
+
+
+
+        #region Constructor
+
+        /// <summary>
+        /// Base constructor.
+        /// </summary>
+        public Employee()
+        {
+
+        }
+
+
+        public Employee(string FirstName, string LastName, string Department)
+        {
+            this.firstName = FirstName;
+            this.lastName = LastName;
+            this.department = Department;
+        }
+
+        #endregion
+
+
+
+        #region Properties
+
         public string FirstName
         {
             get { return firstName; }
@@ -26,20 +54,33 @@ namespace cis237Inclass3
             set { lastName = value; }
         }
 
-        public string FirstName
+        public string Department
         {
             get { return department; }
             set { department = value; }
         }
 
-        //3 Parameter Constructor
-        public Employee(string FirstName, string LastName, string Department)
+        #endregion
+
+
+
+        #region Methods
+
+        /// <summary>
+        /// Overrides inherited (from visual studio) ToString to display name and department.
+        /// </summary>
+        /// <returns>String of employee information.</returns>
+        public override string ToString()
         {
-            this.firstName = FirstName;
-            this.lastName = LastName;
-            this.department = Department;
+            return firstName + " " + lastName + ", " + department;
         }
 
+        protected virtual void PrintFullEmployee()
+        {
+            Console.WriteLine(firstName + " " + lastName);
+        }
+
+        #endregion
 
     }
 }
