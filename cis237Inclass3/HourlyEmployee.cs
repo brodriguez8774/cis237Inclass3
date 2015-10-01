@@ -76,9 +76,19 @@ namespace cis237Inclass3
         /// </summary>
         /// <param name="hoursWorked"></param>
         /// <returns></returns>
-        public decimal CalculateWeeklyGross()
+        public override decimal CalculateWeeklyGross()
         {
             return hourlyRate * (decimal)hoursWorked;
+        }
+
+        /// <summary>
+        /// Similar to inherited class, just showing properties of interfaces and inheritance.
+        /// </summary>
+        /// <returns>A string of QuadDepartment.</returns>
+        public override string GetDepartmentTwice()
+        {
+            // Now will print 4 times.
+            return base.GetDepartmentTwice() + base.GetDepartmentTwice();
         }
 
         #endregion

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace cis237Inclass3
 {
-    class Employee
+    abstract class Employee : IEmployee
     {
         #region Variables
 
@@ -29,11 +29,11 @@ namespace cis237Inclass3
         }
 
 
-        public Employee(string FirstName, string LastName, string Department)
+        public Employee(string firstName, string lastName, string department)
         {
-            this.firstName = FirstName;
-            this.lastName = LastName;
-            this.department = Department;
+            FirstName = firstName;
+            LastName = lastName;
+            Department = department;
         }
 
         #endregion
@@ -75,9 +75,29 @@ namespace cis237Inclass3
             return firstName + " " + lastName + ", " + department;
         }
 
+        /// <summary>
+        /// Prints full name of employee.
+        /// </summary>
         protected virtual void PrintFullEmployee()
         {
             Console.WriteLine(firstName + " " + lastName);
+        }
+
+        /// <summary>
+        /// Abstract CalculateWeeklyGross class. Makes it so that all inheriting classes MUST
+        /// have a class with the same name and properties.
+        /// </summary>
+        public abstract decimal CalculateWeeklyGross();
+
+        /// <summary>
+        /// Nonsensical method to show how interfaces work.
+        /// Because method is in interface, it MUST be inherited in some manner.
+        /// Interface does not give details so you have some room to decide exactly how it's implimented.
+        /// </summary>
+        /// <returns>A string of DoubleDepartment.</returns>
+        public virtual string GetDepartmentTwice()
+        {
+            return this.Department + this.Department;
         }
 
         #endregion

@@ -61,12 +61,15 @@ namespace cis237Inclass3
             return base.ToString() + ", " + yearlySalary.ToString("C");
         }
 
+        /// <summary>
+        /// Prints full name of employee.
+        /// </summary>
         protected override void PrintFullEmployee()
         {
             Console.WriteLine(base.ToString() + ", " + yearlySalary.ToString("C"));
         }
 
-        public decimal CalculateWeeklyGross()
+        public override decimal CalculateWeeklyGross()
         {
             return yearlySalary / 52;
         }

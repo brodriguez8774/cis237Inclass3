@@ -19,16 +19,19 @@ namespace cis237Inclass3
             SalaryEmployee salaryEmployee = new SalaryEmployee("Aa", "Aaa", "IT", 150000);
 
             Console.WriteLine(salaryEmployee.ToString());
+            Console.WriteLine(salaryEmployee.CalculateWeeklyGross().ToString("C"));
+            Console.WriteLine("Department: " + salaryEmployee.GetDepartmentTwice());
 
-            Console.WriteLine(salaryEmployee.CalculateWeeklyGross());
 
             Console.WriteLine(Environment.NewLine + "".PadLeft(15, '~') + Environment.NewLine);
+
 
             HourlyEmployee hourlyEmployee = new HourlyEmployee("Bb", "Bbb", "HR", 8.37m);
             hourlyEmployee.HoursWorked = 40;
 
             Console.WriteLine(hourlyEmployee.ToString());
-            Console.WriteLine(hourlyEmployee.CalculateWeeklyGross());
+            Console.WriteLine(hourlyEmployee.CalculateWeeklyGross().ToString("C"));
+            Console.WriteLine("Department: " + hourlyEmployee.GetDepartmentTwice());
         }
     }
 }
