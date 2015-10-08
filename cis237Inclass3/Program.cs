@@ -1,4 +1,10 @@
-﻿using System;
+﻿
+/* Note: This class frequently has notes refering to "higher" or "lower" level objects.
+ * This is refering to a "chain of inheritance" with the upper/starting/higher objects being the interface/abstract employee.
+ * The things inheriting from these objects are the lower/ending/last-in-inheritance-chain objects.
+ * */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
